@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles/welcomeScreen.module.css';
+import { Navigate } from 'react-router-dom';
 
 export const WelcomeScreen = () => {
     return (
@@ -16,13 +17,19 @@ export const WelcomeScreen = () => {
                 className={styles['logo-main']}
             />
             <div className={styles['button-container']}>
-                <button className={`${styles.button} ${styles.red}`}>
+                <button className={`${styles.button} ${styles.red}`}
+					onClick={()=> Navigate('/registrar-dueno')}
+				>
                     Registrar Dueño
                 </button>
-                <button className={`${styles.button} ${styles.white}`}>
+                <button className={`${styles.button} ${styles.white}`}
+					onClick={()=>Navigate('/registrar-usuario')}	
+				>
                     Registrar Usuario
                 </button>
-                <button className={`${styles.button} ${styles.black}`}>
+                <button className={`${styles.button} ${styles.black}`}
+					onClick={()=>Navigate('/Inicio')}
+				>
                     Continuar como invitado
                 </button>
             </div>
